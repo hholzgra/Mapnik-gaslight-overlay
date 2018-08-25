@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Map [
+<!ENTITY datasource-settings SYSTEM "inc/datasource-settings.xml.inc">
+]>
+
+<Map srs="+init=epsg:3857" bgcolor="transparent">
+
+<Style name="gaslight">
+  <Rule>
+    <LineSymbolizer stroke="orange" stroke-width="6" stroke-opacity="0.5"/>
+  </Rule>
+</Style>
+
+<Layer name="gaslight" status="on"  srs="+init=epsg:3857">
+  <StyleName>gaslight</StyleName>
+  <Datasource>
+    <Parameter name="table">
+      (SELECT way
+         FROM planet_osm_line
+        WHERE tags->'lit_by_gaslight' = 'yes'
+      ) AS way
+    </Parameter>
+    <Parameter name="geometry_field">way</Parameter>
+    &datasource-settings;
+  </Datasource>
+</Layer>
+
+</Map>

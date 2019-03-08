@@ -1,0 +1,20 @@
+{
+    "project": {
+        "contact_name": "Hartmut Holzgraefe", 
+        "contact_email": "hartmut@php.net", 
+        "name": "Gaslight Mapnik overlay style", 
+        "project_url": "https://github.com/hholzgra/Mapnik-gaslight-overlay",
+        "description": "This files contains all keys used in the gaslight overlay"
+    }, 
+    "data_format": 1, 
+    "tags": [
+        {
+	    "description": "Streets with gaslight street lamps",
+            "key": "lit_by_gaslight",
+            "value": "yes",
+            "object_types": [
+                 "way"
+            ]
+        }
+    ]
+}
